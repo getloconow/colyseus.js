@@ -58,7 +58,7 @@ export class Room<State= any> {
         this.onLeave(() => this.removeAllListeners());
     }
 
-    public connect(endpoint: string) {
+    public connect(endpoint: string, cookie: string) {
         this.connection = new Connection(endpoint, false);
         this.connection.reconnectEnabled = false;
         this.connection.onmessage = this.onMessageCallback.bind(this);
